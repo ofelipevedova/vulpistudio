@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Exploid Game mockup</title>
+  <desc id="desc">A dark abstract mobile app composition with a tilted phone and geometric texture.</desc>
+  <defs>
+    <linearGradient id="w1-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050505" />
+      <stop offset="52%" stop-color="#111111" />
+      <stop offset="100%" stop-color="#1b1b1d" />
+    </linearGradient>
+    <radialGradient id="w1-glow" cx="72%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12" />
+      <stop offset="42%" stop-color="#ffffff" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="w1-phone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5c53ff" />
+      <stop offset="100%" stop-color="#6f63ff" />
+    </linearGradient>
+    <filter id="w1-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#w1-bg)" />
+  <rect width="1600" height="1000" fill="url(#w1-glow)" />
+
+  <g opacity="0.45">
+    <polygon points="0,0 180,0 120,120 0,70" fill="#1f1f22" />
+    <polygon points="180,0 340,0 270,150 120,120" fill="#141416" />
+    <polygon points="340,0 500,0 430,140 270,150" fill="#202024" />
+    <polygon points="0,70 120,120 90,250 0,210" fill="#171719" />
+    <polygon points="120,120 270,150 220,300 90,250" fill="#222225" />
+    <polygon points="270,150 430,140 360,290 220,300" fill="#161618" />
+    <polygon points="430,140 560,180 520,330 360,290" fill="#1d1d20" />
+    <polygon points="0,210 90,250 70,410 0,360" fill="#101012" />
+    <polygon points="90,250 220,300 170,470 70,410" fill="#1a1a1d" />
+    <polygon points="220,300 360,290 320,460 170,470" fill="#2a2a2d" />
+  </g>
+
+  <ellipse cx="940" cy="720" rx="370" ry="90" fill="#000000" opacity="0.32" />
+  <ellipse cx="880" cy="600" rx="310" ry="460" fill="#ffffff" opacity="0.03" />
+
+  <g transform="translate(540 150) rotate(-18 250 350)" filter="url(#w1-shadow)">
+    <rect x="130" y="60" width="360" height="680" rx="42" fill="#0a0a0c" />
+    <rect x="156" y="88" width="308" height="614" rx="30" fill="url(#w1-phone)" />
+    <rect x="263" y="74" width="84" height="12" rx="6" fill="#0b0b0d" />
+    <circle cx="310" cy="106" r="6" fill="#ffffff" opacity="0.65" />
+
+    <g fill="#f6f0e8" opacity="0.94">
+      <text x="184" y="208" font-size="74" font-family="Space Grotesk, Arial, sans-serif" font-weight="400" letter-spacing="-2">Phone</text>
+      <text x="184" y="282" font-size="74" font-family="Space Grotesk, Arial, sans-serif" font-weight="400" letter-spacing="-2">Mockup</text>
+      <text x="184" y="610" font-size="146" font-family="Space Grotesk, Arial, sans-serif" font-weight="400" letter-spacing="-6" opacity="0.88">15</text>
+    </g>
+
+    <g opacity="0.32" fill="#f6f0e8">
+      <rect x="184" y="334" width="178" height="8" />
+      <rect x="184" y="354" width="162" height="8" />
+      <rect x="184" y="374" width="192" height="8" />
+      <rect x="184" y="394" width="146" height="8" />
+      <rect x="184" y="440" width="136" height="8" />
+      <rect x="184" y="460" width="186" height="8" />
+      <rect x="184" y="480" width="124" height="8" />
+    </g>
+
+    <g opacity="0.55">
+      <rect x="182" y="540" width="82" height="2" fill="#f6f0e8" />
+      <rect x="182" y="556" width="118" height="2" fill="#f6f0e8" />
+      <rect x="182" y="572" width="96" height="2" fill="#f6f0e8" />
+    </g>
+  </g>
+
+  <g opacity="0.18">
+    <rect x="1210" y="120" width="160" height="12" fill="#ffffff" transform="rotate(45 1210 120)" />
+    <rect x="1260" y="160" width="220" height="12" fill="#ffffff" transform="rotate(45 1260 160)" />
+    <rect x="1180" y="780" width="280" height="10" fill="#ffffff" transform="rotate(-20 1180 780)" />
+  </g>
+</svg>
