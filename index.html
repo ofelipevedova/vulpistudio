@@ -401,6 +401,13 @@
                     data-contact-form
                     autocomplete="on"
                 >
+                    <input type="text" name="_honey" class="contact-form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <input type="hidden" name="_subject" value="Contato pelo site - Vulpi Studio">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_replyto" value="">
+                    <input type="hidden" name="_url" value="">
+
                     <div class="contact-form__row">
                         <div class="contact-field">
                             <label for="contact-name" data-i18n="contact.nameLabel">Nome e sobrenome</label>
@@ -479,8 +486,10 @@
 
                     <div class="contact-actions">
                         <button class="btn btn--primary contact-submit" type="submit" data-i18n="contact.submit">Enviar</button>
-                        <p class="contact-note" data-i18n="contact.note">Ao enviar, seu aplicativo de e-mail será aberto com a mensagem pronta.</p>
+                        <p class="contact-note" data-i18n="contact.note">Sua mensagem será enviada para contato@vulpistudio.com e a confirmação ou o erro aparecem aqui na tela.</p>
                     </div>
+
+                    <p class="contact-status" data-contact-status role="status" aria-live="polite"></p>
                 </form>
             </div>
         </div>
