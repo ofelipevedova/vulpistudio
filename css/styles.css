@@ -1496,17 +1496,29 @@ body.cases-index-page {
 }
 
 /* ==================== FOOTER ==================== */
+.contact-section {
+    background: #fff;
+    color: var(--ink);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+}
+
 .footer {
     background: #101010;
     color: #fff;
-    padding-top: clamp(3.5rem, 7vw, 6rem);
+    padding-top: 0;
     padding-bottom: 3rem;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    gap: clamp(1.5rem, 4vw, 3rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     align-items: start;
@@ -1538,15 +1550,8 @@ body.cases-index-page {
 
 .contact-description {
     max-width: 36rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--muted);
     line-height: 1.75;
-}
-
-.contact-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem 1.25rem;
-    padding-top: 0.25rem;
 }
 
 .social-row {
@@ -1592,7 +1597,7 @@ body.cases-index-page {
     display: grid;
     gap: 1rem;
     padding: clamp(1.25rem, 3vw, 1.9rem);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(16, 16, 16, 0.08);
     background: #ffffff;
     color: var(--ink);
     box-shadow: var(--shadow);
@@ -1695,23 +1700,18 @@ body.cases-index-page {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.footer--compact {
-    padding-top: 0;
-    padding-bottom: 2rem;
-}
-
-.footer--compact .footer-bottom {
-    margin-top: 0;
-}
-
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1100px) {
     .services-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .footer-grid {
+    .contact-grid {
         grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .hero-copy h1 {
@@ -1774,12 +1774,12 @@ body.cases-index-page {
     }
 
     .services-grid,
+    .contact-grid,
     .footer-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact-form__row,
-    .contact-links {
+    .contact-form__row {
         grid-template-columns: 1fr;
     }
 
