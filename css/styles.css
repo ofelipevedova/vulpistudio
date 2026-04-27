@@ -1603,6 +1603,25 @@ body.cases-index-page {
     box-shadow: var(--shadow);
 }
 
+.contact-form__honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.contact-form__frame {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .contact-form__row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1673,6 +1692,22 @@ body.cases-index-page {
     color: rgba(16, 16, 16, 0.58);
     font-size: 0.92rem;
     line-height: 1.6;
+}
+
+.contact-status {
+    margin: 0;
+    min-height: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.contact-status.is-success {
+    color: #17623a;
+}
+
+.contact-status.is-error {
+    color: #b42318;
 }
 
 .footer-bottom {

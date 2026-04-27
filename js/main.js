@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const storageKey = "vulpi-locale";
     const pageMode = document.body.dataset.page || "home";
@@ -27,31 +27,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const translations = {
         "pt-BR": {
             "pageTitle": "Vulpi Studio | Design de marca, UI/UX e front-end",
-            "metaDescription": "Vulpi Studio cria marcas, interfaces e sites premium com estratégia, branding, UI/UX e front-end focados em clareza, performance e presença digital.",
-            "brand.aria": "Início da Vulpi Studio",
-            "nav.aria": "Navegação principal",
-            "nav.home": "Início",
+            "metaDescription": "Vulpi Studio cria marcas, interfaces e sites premium com estratÃ©gia, branding, UI/UX e front-end focados em clareza, performance e presenÃ§a digital.",
+            "brand.aria": "InÃ­cio da Vulpi Studio",
+            "nav.aria": "NavegaÃ§Ã£o principal",
+            "nav.home": "InÃ­cio",
             "nav.about": "Sobre",
             "nav.works": "Cases",
             "nav.contact": "Contato",
-            "lang.aria": "Seleção de idioma",
-            "breadcrumb.aria": "Caminho de navegação",
-            "hero.title1": "Criamos com propósito, cada pixel",
-            "hero.title2": "é intencional.",
-            "hero.description": "Aqui no Vulpi Studio, nós criamos marcas, interfaces e sites premium com estratégia, branding, UI/UX e front-end focados em clareza, performance e presença digital.",
-            "hero.cta": "Começar agora",
+            "lang.aria": "SeleÃ§Ã£o de idioma",
+            "breadcrumb.aria": "Caminho de navegaÃ§Ã£o",
+            "hero.title1": "Criamos com propÃ³sito, cada pixel",
+            "hero.title2": "Ã© intencional.",
+            "hero.description": "Aqui no Vulpi Studio, nÃ³s criamos marcas, interfaces e sites premium com estratÃ©gia, branding, UI/UX e front-end focados em clareza, performance e presenÃ§a digital.",
+            "hero.cta": "ComeÃ§ar agora",
             "hero.imageAlt": "Visual editorial abstrato",
             "hero.creditAria": "Imagem de Evie S. no Unsplash",
-            "about.label": "Sobre nós",
-            "about.description": "Vulpi Studio é uma parceira de design focada em marcas que precisam de estratégia, identidade e execução digital sem fricção desnecessária ou repasses dispersos.",
+            "about.label": "Sobre nÃ³s",
+            "about.description": "Vulpi Studio Ã© uma parceira de design focada em marcas que precisam de estratÃ©gia, identidade e execuÃ§Ã£o digital sem fricÃ§Ã£o desnecessÃ¡ria ou repasses dispersos.",
             "about.cta": "Entre em contato",
-            "about.imageAlt": "Composição abstrata inspirada em sistemas de branding e design de produto",
+            "about.imageAlt": "ComposiÃ§Ã£o abstrata inspirada em sistemas de branding e design de produto",
             "about.creditAria": "Imagem de Hennie Stander no Unsplash",
             "works.label": "Cases recentes",
             "works.trackAria": "Carrossel de cases recentes",
-            "works.controlsAria": "Navegação de cases",
+            "works.controlsAria": "NavegaÃ§Ã£o de cases",
             "works.prevAria": "Cases anteriores",
-            "works.nextAria": "Próximos cases",
+            "works.nextAria": "PrÃ³ximos cases",
             "works.card1.title": "Pega a Receita",
             "works.card1.category": "Site de receitas",
             "works.card1.alt": "Imagem de capa do case Pega a Receita",
@@ -63,59 +63,61 @@ document.addEventListener("DOMContentLoaded", () => {
             "works.card3.title": "Fashion Brand",
             "works.card3.category": "Branding",
             "works.card3.alt": "Conceito editorial de identidade Fashion Brand",
-            "services.label": "Nossos serviços",
+            "services.label": "Nossos serviÃ§os",
             "services.card1.title": "UI/UX Design",
-            "services.card1.text": "Nós estruturamos fluxos, interfaces e sistemas visuais que parecem calmos, claros e sofisticados desde a primeira tela.",
+            "services.card1.text": "NÃ³s estruturamos fluxos, interfaces e sistemas visuais que parecem calmos, claros e sofisticados desde a primeira tela.",
             "services.card2.title": "Desenvolvimento Web",
-            "services.card2.text": "Nós construímos sites responsivos com estrutura moderna, código eficiente e interações confiáveis em todos os dispositivos.",
+            "services.card2.text": "NÃ³s construÃ­mos sites responsivos com estrutura moderna, cÃ³digo eficiente e interaÃ§Ãµes confiÃ¡veis em todos os dispositivos.",
             "services.card3.title": "Desenvolvimento de Apps",
-            "services.card3.text": "Nós criamos aplicativos móveis e web intuitivos com foco em usabilidade, movimento e consistência entre plataformas.",
+            "services.card3.text": "NÃ³s criamos aplicativos mÃ³veis e web intuitivos com foco em usabilidade, movimento e consistÃªncia entre plataformas.",
             "services.card4.title": "Consultoria de design",
-            "services.card4.text": "Nós apoiamos decisões de posicionamento, identidade e produto com direção clara quando a marca precisa de um sistema visual mais afiado.",
-            "services.card5.title": "Gestão de Social Media",
-            "services.card5.text": "Nós planejamos conteúdo, consistência visual e direção criativa para manter a marca presente e coerente nas redes.",
+            "services.card4.text": "NÃ³s apoiamos decisÃµes de posicionamento, identidade e produto com direÃ§Ã£o clara quando a marca precisa de um sistema visual mais afiado.",
+            "services.card5.title": "GestÃ£o de Social Media",
+            "services.card5.text": "NÃ³s planejamos conteÃºdo, consistÃªncia visual e direÃ§Ã£o criativa para manter a marca presente e coerente nas redes.",
             "services.card6.title": "Branding",
-            "services.card6.text": "Nós desenvolvemos posicionamento, identidade visual e sistemas de marca que sustentam clareza, diferenciação e percepção premium.",
+            "services.card6.text": "NÃ³s desenvolvemos posicionamento, identidade visual e sistemas de marca que sustentam clareza, diferenciaÃ§Ã£o e percepÃ§Ã£o premium.",
             "services.cta": "Entre em contato",
             "contact.label": "Contato",
-            "contact.description": "Preencha o formulário e me conte o contexto do projeto, o prazo e o que você precisa resolver. Eu retorno com a próxima etapa.",
+            "contact.description": "Preencha o formulÃ¡rio e me conte o contexto do projeto, o prazo e o que vocÃª precisa resolver. Eu retorno com a prÃ³xima etapa.",
             "contact.nameLabel": "Nome e sobrenome",
             "contact.namePlaceholder": "Seu nome completo",
             "contact.phoneLabel": "Telefone",
             "contact.phonePlaceholder": "(00) 00000-0000",
             "contact.emailLabel": "Email",
             "contact.emailPlaceholder": "voce@exemplo.com",
-            "contact.serviceLabel": "Qual serviço",
-            "contact.servicePlaceholder": "Selecione um serviço",
+            "contact.servicePlaceholder": "Selecione um serviÃ§o",
             "contact.serviceOther": "Outro",
-            "contact.messageLabel": "Mensagem",
             "contact.messagePlaceholder": "Conte sobre seu projeto, objetivos e prazo.",
             "contact.submit": "Enviar",
-            "contact.note": "Ao enviar, seu aplicativo de e-mail será aberto com a mensagem pronta.",
+            "contact.note": "Sua mensagem serÃ¡ enviada para contato@vulpistudio.com e a confirmação ou o erro aparecem aqui na tela.",
+            "contact.submitting": "Enviando...",
+            "contact.success": "Mensagem enviada com sucesso. Vou responder em contato@vulpistudio.com.",
+            "contact.error": "NÃ£o foi possÃ­vel enviar agora. Tente novamente ou escreva para contato@vulpistudio.com.",
+            "contact.validation": "Confira os campos destacados e tente novamente.",
             "contact.mailSubject": "Contato pelo site - Vulpi Studio",
             "testimonials.label": "Depoimentos de clientes",
             "testimonials.trackAria": "Carrossel de depoimentos",
-            "testimonials.controlsAria": "Navegação de depoimentos",
+            "testimonials.controlsAria": "NavegaÃ§Ã£o de depoimentos",
             "testimonials.prevAria": "Depoimentos anteriores",
-            "testimonials.nextAria": "Próximos depoimentos",
-            "testimonials.quote1": "Foi mais do que eu esperava! Colaborei com o VulpiStudio no desenvolvimento do meu MVP, infelizmente não pude dizer que meu MVP era feio, a equipe se entregou muito durante os 8 meses de atuação.",
+            "testimonials.nextAria": "PrÃ³ximos depoimentos",
+            "testimonials.quote1": "Foi mais do que eu esperava! Colaborei com o VulpiStudio no desenvolvimento do meu MVP, infelizmente nÃ£o pude dizer que meu MVP era feio, a equipe se entregou muito durante os 8 meses de atuaÃ§Ã£o.",
             "testimonials.role1": "(GuiaMoto app)",
-            "testimonials.quote2": "Nosso ERP. Contratamos o VulpiStudio para participar do desenvolvimento do nosso ERP, a equipe atuou de ponta a ponta executando pesquisas, criando DS e elaborando as telas, gostamos tanto do resultado que desenvolvemos nosso site após o termino.",
+            "testimonials.quote2": "Nosso ERP. Contratamos o VulpiStudio para participar do desenvolvimento do nosso ERP, a equipe atuou de ponta a ponta executando pesquisas, criando DS e elaborando as telas, gostamos tanto do resultado que desenvolvemos nosso site apÃ³s o termino.",
             "testimonials.role2": "(EXTDS)",
-            "testimonials.quote3": "Queríamos um site que fosse diferente do padrão dos sites de receitas. Falamos com o Felipe sobre a ideia e ele já nos trouxe uma proposta inicial. Gostamos do conceito de um site clean e minimalista. O resultado nos agradou bastante: um site completo, com o padrão que a gente queria.",
+            "testimonials.quote3": "QuerÃ­amos um site que fosse diferente do padrÃ£o dos sites de receitas. Falamos com o Felipe sobre a ideia e ele jÃ¡ nos trouxe uma proposta inicial. Gostamos do conceito de um site clean e minimalista. O resultado nos agradou bastante: um site completo, com o padrÃ£o que a gente queria.",
             "testimonials.role3": "(Pega a Receita)",
-            "testimonials.quote4": "A ideia desse projeto era criar um site de receita que não fosse comum e cheio de informações como os atuais. O VulpiStudio conseguiu entregar um resultado alinhado com o que a gente imaginava: um site limpo e de alto padrão.",
+            "testimonials.quote4": "A ideia desse projeto era criar um site de receita que nÃ£o fosse comum e cheio de informaÃ§Ãµes como os atuais. O VulpiStudio conseguiu entregar um resultado alinhado com o que a gente imaginava: um site limpo e de alto padrÃ£o.",
             "testimonials.role4": "(Pega a Receita)",
-            "testimonials.quote5": "Fechamos com o VulpiStudio para redesenhar nosso ERP, gostamos do resultado e combinamos de refazer o design do construtor de sites da nossa plataforma. O resultado foi extremamente agradável, o construtor ficou fácil de utilizar e o feedback que recebemos dos nossos clientes foi sempre positivo.",
+            "testimonials.quote5": "Fechamos com o VulpiStudio para redesenhar nosso ERP, gostamos do resultado e combinamos de refazer o design do construtor de sites da nossa plataforma. O resultado foi extremamente agradÃ¡vel, o construtor ficou fÃ¡cil de utilizar e o feedback que recebemos dos nossos clientes foi sempre positivo.",
             "testimonials.role5": "(Macle Sistemas)",
             "footer.copy": "Copyright 2026 - VulpiStudio.",
             "footer.email": "Email",
-            "footer.address": "Endereço",
+            "footer.address": "EndereÃ§o",
             "footer.social": "Social",
             "footer.backToTop": "Voltar ao topo",
             "case.eyebrow": "Aplicativo mobile",
             "case.title": "Exploid Game",
-            "case.lead": "Uma experiência mobile pensada para ritmo, clareza e sensação constante de avanço.",
+            "case.lead": "Uma experiÃªncia mobile pensada para ritmo, clareza e sensaÃ§Ã£o constante de avanÃ§o.",
             "case.meta.clientLabel": "Cliente",
             "case.meta.clientValue": "Favorito do cliente",
             "case.meta.scopeLabel": "Escopo",
@@ -126,25 +128,25 @@ document.addEventListener("DOMContentLoaded", () => {
             "case.galleryAria": "Galeria do case",
             "case.image1Alt": "Visual principal do Exploid Game",
             "case.image2Alt": "Detalhe do sistema visual do Exploid Game",
-            "case.image3Alt": "Variação editorial do Exploid Game",
-            "case.image4Alt": "Composição abstrata complementar do case",
-            "case.image5Alt": "Composição abstrata de apoio ao case",
+            "case.image3Alt": "VariaÃ§Ã£o editorial do Exploid Game",
+            "case.image4Alt": "ComposiÃ§Ã£o abstrata complementar do case",
+            "case.image5Alt": "ComposiÃ§Ã£o abstrata de apoio ao case",
             "case.image6Alt": "Conceito visual adicional do Exploid Game",
-            "case.overviewLabel": "VISÃO GERAL",
-            "case.overviewTitle": "Projeto pensado para velocidade, leitura rápida e um fluxo visual que mantém o jogador em movimento.",
-            "case.overviewText1": "A direção do Exploid Game combina contraste forte, blocos limpos e uma hierarquia simples para reduzir atrito entre interesse e ação. O objetivo foi criar uma sensação imediata de energia sem perder clareza.",
-            "case.overviewText2": "Cada tela prioriza leitura, progressão e foco no conteúdo. Assim, o usuário entende o que importa sem esforço e consegue avançar com menos hesitação.",
-            "case.metricsAria": "Informações do projeto",
-            "case.metric1Label": "Público",
+            "case.overviewLabel": "VISÃƒO GERAL",
+            "case.overviewTitle": "Projeto pensado para velocidade, leitura rÃ¡pida e um fluxo visual que mantÃ©m o jogador em movimento.",
+            "case.overviewText1": "A direÃ§Ã£o do Exploid Game combina contraste forte, blocos limpos e uma hierarquia simples para reduzir atrito entre interesse e aÃ§Ã£o. O objetivo foi criar uma sensaÃ§Ã£o imediata de energia sem perder clareza.",
+            "case.overviewText2": "Cada tela prioriza leitura, progressÃ£o e foco no conteÃºdo. Assim, o usuÃ¡rio entende o que importa sem esforÃ§o e consegue avanÃ§ar com menos hesitaÃ§Ã£o.",
+            "case.metricsAria": "InformaÃ§Ãµes do projeto",
+            "case.metric1Label": "PÃºblico",
             "case.metric1Value": "Jogadores casuais e competitivos",
             "case.metric2Label": "Objetivo",
-            "case.metric2Value": "Fazer a experiência parecer rápida e premium",
+            "case.metric2Value": "Fazer a experiÃªncia parecer rÃ¡pida e premium",
             "case.metric3Label": "Foco",
-            "case.metric3Value": "Clareza, progresso e retenção",
+            "case.metric3Value": "Clareza, progresso e retenÃ§Ã£o",
             "case.challengeLabel": "DESAFIO",
-            "case.challengeTitle": "Construir uma interface que pareça viva, mas continue simples o suficiente para não atrapalhar a experiência.",
-            "case.challengeText1": "O maior risco em jogos mobile é deixar a interface competir com a própria ação. Por isso, a composição visual foi pensada para reforçar movimento sem poluir a leitura.",
-            "case.challengeText2": "O resultado é um sistema que sustenta ritmo, melhora entendimento e mantém a sensação de progresso em cada ponto de contato.",
+            "case.challengeTitle": "Construir uma interface que pareÃ§a viva, mas continue simples o suficiente para nÃ£o atrapalhar a experiÃªncia.",
+            "case.challengeText1": "O maior risco em jogos mobile Ã© deixar a interface competir com a prÃ³pria aÃ§Ã£o. Por isso, a composiÃ§Ã£o visual foi pensada para reforÃ§ar movimento sem poluir a leitura.",
+            "case.challengeText2": "O resultado Ã© um sistema que sustenta ritmo, melhora entendimento e mantÃ©m a sensaÃ§Ã£o de progresso em cada ponto de contato.",
         },
         "en-US": {
             "pageTitle": "Vulpi Studio | Brand design, UI/UX and front-end",
@@ -199,20 +201,22 @@ document.addEventListener("DOMContentLoaded", () => {
             "services.card6.text": "We develop positioning, visual identity, and brand systems that support clarity, differentiation, and premium perception.",
             "services.cta": "Contact us",
             "contact.label": "Contact",
-            "contact.description": "Fill out the form and share the project context, timeline, and what needs to be solved. I’ll get back with the next step.",
+            "contact.description": "Fill out the form and share the project context, timeline, and what needs to be solved. Iâ€™ll get back with the next step.",
             "contact.nameLabel": "First and last name",
             "contact.namePlaceholder": "Your full name",
             "contact.phoneLabel": "Phone",
             "contact.phonePlaceholder": "(00) 00000-0000",
             "contact.emailLabel": "Email",
             "contact.emailPlaceholder": "you@example.com",
-            "contact.serviceLabel": "Which service",
             "contact.servicePlaceholder": "Select a service",
             "contact.serviceOther": "Other",
-            "contact.messageLabel": "Message",
             "contact.messagePlaceholder": "Tell me about your project, goals, and timeline.",
             "contact.submit": "Send",
-            "contact.note": "Submitting opens your email app with the message prefilled.",
+            "contact.note": "Your message will be sent to contato@vulpistudio.com and the confirmation or error will appear here.",
+            "contact.submitting": "Sending...",
+            "contact.success": "Message sent successfully. Iâ€™ll reply from contato@vulpistudio.com.",
+            "contact.error": "We couldnâ€™t send it right now. Try again or write to contato@vulpistudio.com.",
+            "contact.validation": "Check the highlighted fields and try again.",
             "contact.mailSubject": "Website inquiry - Vulpi Studio",
             "testimonials.label": "Client testimonials",
             "testimonials.trackAria": "Testimonial carousel",
@@ -507,9 +511,22 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('[data-carousel-track="testimonials"]'),
         document.querySelector("[data-carousel-prev]"),
         document.querySelector("[data-carousel-next]"),
-    );
-
-    const contactForm = document.querySelector("[data-contact-form]");
+    );const contactForm = document.querySelector("[data-contact-form]");
+    const contactFrame = document.querySelector("[data-contact-frame]");
+    const contactStatus = document.querySelector("[data-contact-status]");
+    const contactSubmitButton = contactForm?.querySelector(".contact-submit");
+    // Fallback for local previews; the live site uses the current page URL.
+    const contactFallbackBaseUrl = "https://ofelipevedova.github.io/vulpistudio/";
+    const contactPageUrl = window.location.protocol === "file:"
+        ? contactFallbackBaseUrl
+        : window.location.href.split("#")[0];
+    const contactSuccessUrl = window.location.protocol === "file:"
+        ? new URL("contact-success.html", contactFallbackBaseUrl).href
+        : new URL("contact-success.html", window.location.href).href;
+    let contactSubmissionTimeoutId = null;
+    let contactSubmissionLabel = contactSubmitButton?.textContent || "Enviar";
+    let contactMessageHandler = null;
+    let contactSubmissionActive = false;
 
     const formatPhoneNumber = (value) => {
         const digits = value.replace(/\D/g, "").slice(0, 11);
@@ -545,30 +562,114 @@ document.addEventListener("DOMContentLoaded", () => {
         input.addEventListener("blur", syncValue);
     });
 
+    const setContactStatus = (variant, message) => {
+        if (!contactStatus) {
+            return;
+        }
+
+        contactStatus.classList.remove("is-success", "is-error");
+        if (variant) {
+            contactStatus.classList.add(`is-${variant}`);
+        }
+
+        contactStatus.textContent = message || "";
+    };
+
+    const clearContactSubmissionState = () => {
+        contactSubmissionActive = false;
+
+        if (contactSubmissionTimeoutId) {
+            window.clearTimeout(contactSubmissionTimeoutId);
+            contactSubmissionTimeoutId = null;
+        }
+
+        if (contactMessageHandler) {
+            window.removeEventListener("message", contactMessageHandler);
+            contactMessageHandler = null;
+        }
+
+        if (contactSubmitButton) {
+            contactSubmitButton.disabled = false;
+            contactSubmitButton.textContent = contactSubmissionLabel;
+        }
+    };
+
     if (contactForm) {
         contactForm.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            const formData = new FormData(contactForm);
-            const contactName = String(formData.get("name") || "").trim();
-            const contactPhone = String(formData.get("phone") || "").trim();
-            const contactEmail = String(formData.get("email") || "").trim();
-            const contactMessage = String(formData.get("message") || "").trim();
-            const serviceSelect = contactForm.querySelector('select[name="service"]');
-            const contactService = serviceSelect?.selectedOptions?.[0]?.textContent?.trim() || String(formData.get("service") || "").trim();
             const dictionary = translations[activeLocale] || translations["pt-BR"];
-            const subject = dictionary["contact.mailSubject"] || "Contato pelo site - Vulpi Studio";
-            const body = [
-                `${dictionary["contact.nameLabel"] || "Nome e sobrenome"}: ${contactName}`,
-                `${dictionary["contact.phoneLabel"] || "Telefone"}: ${contactPhone}`,
-                `${dictionary["contact.emailLabel"] || "Email"}: ${contactEmail}`,
-                `${dictionary["contact.serviceLabel"] || "Qual serviço"}: ${contactService}`,
-                "",
-                `${dictionary["contact.messageLabel"] || "Mensagem"}:`,
-                contactMessage,
-            ].join("\n");
 
-            window.location.href = `mailto:contato@vulpistudio.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            if (!contactForm.reportValidity()) {
+                setContactStatus("error", dictionary["contact.validation"] || "Confira os campos e tente novamente.");
+                return;
+            }
+
+            const submitLabel = contactSubmitButton?.textContent || dictionary["contact.submit"] || "Enviar";
+            const replyToInput = contactForm.querySelector('input[name="_replyto"]');
+            const urlInput = contactForm.querySelector('input[name="_url"]');
+            const nextInput = contactForm.querySelector('input[name="_next"]');
+            const emailInput = contactForm.querySelector('input[name="email"]');
+            const contactEmail = String(emailInput?.value || "").trim();
+
+            setContactStatus("", dictionary["contact.submitting"] || "Enviando...");
+
+            clearContactSubmissionState();
+            contactSubmissionActive = true;
+            contactSubmissionLabel = submitLabel;
+
+            if (contactSubmitButton) {
+                contactSubmitButton.disabled = true;
+                contactSubmitButton.textContent = dictionary["contact.submitting"] || "Enviando...";
+            }
+
+            if (replyToInput) {
+                replyToInput.value = contactEmail;
+            }
+
+            if (urlInput) {
+                urlInput.value = contactPageUrl;
+            }
+
+            if (nextInput) {
+                nextInput.value = contactSuccessUrl;
+            }
+
+            contactMessageHandler = (messageEvent) => {
+                if (!contactSubmissionActive || !contactFrame) {
+                    return;
+                }
+
+                if (messageEvent.source !== contactFrame.contentWindow) {
+                    return;
+                }
+
+                if (!messageEvent.data || messageEvent.data.type !== "contact-form-success") {
+                    return;
+                }
+
+                contactForm.reset();
+                clearContactSubmissionState();
+                setContactStatus("success", dictionary["contact.success"] || "Mensagem enviada com sucesso.");
+            };
+
+            window.addEventListener("message", contactMessageHandler);
+
+            contactSubmissionTimeoutId = window.setTimeout(() => {
+                if (!contactSubmissionActive) {
+                    return;
+                }
+
+                clearContactSubmissionState();
+                setContactStatus("error", dictionary["contact.error"] || "Não foi possível enviar agora.");
+            }, 15000);
+
+            try {
+                contactForm.submit();
+            } catch (error) {
+                clearContactSubmissionState();
+                setContactStatus("error", dictionary["contact.error"] || "Não foi possível enviar agora.");
+            }
         });
     }
 
