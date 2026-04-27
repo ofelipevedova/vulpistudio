@@ -77,6 +77,22 @@ document.addEventListener("DOMContentLoaded", () => {
             "services.card6.title": "Branding",
             "services.card6.text": "Nós desenvolvemos posicionamento, identidade visual e sistemas de marca que sustentam clareza, diferenciação e percepção premium.",
             "services.cta": "Entre em contato",
+            "contact.label": "Contato",
+            "contact.description": "Preencha o formulário e me conte o contexto do projeto, o prazo e o que você precisa resolver. Eu retorno com a próxima etapa.",
+            "contact.nameLabel": "Nome e sobrenome",
+            "contact.namePlaceholder": "Seu nome completo",
+            "contact.phoneLabel": "Telefone",
+            "contact.phonePlaceholder": "(00) 00000-0000",
+            "contact.emailLabel": "Email",
+            "contact.emailPlaceholder": "voce@exemplo.com",
+            "contact.serviceLabel": "Qual serviço",
+            "contact.servicePlaceholder": "Selecione um serviço",
+            "contact.serviceOther": "Outro",
+            "contact.messageLabel": "Mensagem",
+            "contact.messagePlaceholder": "Conte sobre seu projeto, objetivos e prazo.",
+            "contact.submit": "Enviar",
+            "contact.note": "Ao enviar, seu aplicativo de e-mail será aberto com a mensagem pronta.",
+            "contact.mailSubject": "Contato pelo site - Vulpi Studio",
             "testimonials.label": "Depoimentos de clientes",
             "testimonials.trackAria": "Carrossel de depoimentos",
             "testimonials.controlsAria": "Navegação de depoimentos",
@@ -94,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "testimonials.role5": "(Macle Sistemas)",
             "footer.copy": "Copyright 2026 - VulpiStudio.",
             "footer.email": "Email",
-            "footer.address": "Endereço",
             "footer.social": "Social",
             "footer.backToTop": "Voltar ao topo",
             "case.eyebrow": "Aplicativo mobile",
@@ -182,6 +197,22 @@ document.addEventListener("DOMContentLoaded", () => {
             "services.card6.title": "Branding",
             "services.card6.text": "We develop positioning, visual identity, and brand systems that support clarity, differentiation, and premium perception.",
             "services.cta": "Contact us",
+            "contact.label": "Contact",
+            "contact.description": "Fill out the form and share the project context, timeline, and what needs to be solved. I’ll get back with the next step.",
+            "contact.nameLabel": "First and last name",
+            "contact.namePlaceholder": "Your full name",
+            "contact.phoneLabel": "Phone",
+            "contact.phonePlaceholder": "(00) 00000-0000",
+            "contact.emailLabel": "Email",
+            "contact.emailPlaceholder": "you@example.com",
+            "contact.serviceLabel": "Which service",
+            "contact.servicePlaceholder": "Select a service",
+            "contact.serviceOther": "Other",
+            "contact.messageLabel": "Message",
+            "contact.messagePlaceholder": "Tell me about your project, goals, and timeline.",
+            "contact.submit": "Send",
+            "contact.note": "Submitting opens your email app with the message prefilled.",
+            "contact.mailSubject": "Website inquiry - Vulpi Studio",
             "testimonials.label": "Client testimonials",
             "testimonials.trackAria": "Testimonial carousel",
             "testimonials.controlsAria": "Testimonial navigation",
@@ -199,7 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "testimonials.role5": "(Macle Sistemas)",
             "footer.copy": "Copyright 2026 - VulpiStudio.",
             "footer.email": "Email",
-            "footer.address": "Office Address",
             "footer.social": "Social",
             "footer.backToTop": "Back to top",
             "case.eyebrow": "Mobile App",
@@ -476,6 +506,69 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("[data-carousel-prev]"),
         document.querySelector("[data-carousel-next]"),
     );
+
+    const contactForm = document.querySelector("[data-contact-form]");
+
+    const formatPhoneNumber = (value) => {
+        const digits = value.replace(/\D/g, "").slice(0, 11);
+
+        if (!digits) {
+            return "";
+        }
+
+        if (digits.length <= 2) {
+            return digits.length === 2 ? `(${digits})` : `(${digits}`;
+        }
+
+        const areaCode = digits.slice(0, 2);
+        const subscriber = digits.slice(2);
+
+        if (subscriber.length <= 4) {
+            return `(${areaCode}) ${subscriber}`;
+        }
+
+        if (subscriber.length <= 8) {
+            return `(${areaCode}) ${subscriber.slice(0, 4)}-${subscriber.slice(4)}`;
+        }
+
+        return `(${areaCode}) ${subscriber.slice(0, 5)}-${subscriber.slice(5)}`;
+    };
+
+    Array.from(document.querySelectorAll("[data-phone-mask]")).forEach((input) => {
+        const syncValue = () => {
+            input.value = formatPhoneNumber(input.value);
+        };
+
+        input.addEventListener("input", syncValue);
+        input.addEventListener("blur", syncValue);
+    });
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const contactName = String(formData.get("name") || "").trim();
+            const contactPhone = String(formData.get("phone") || "").trim();
+            const contactEmail = String(formData.get("email") || "").trim();
+            const contactMessage = String(formData.get("message") || "").trim();
+            const serviceSelect = contactForm.querySelector('select[name="service"]');
+            const contactService = serviceSelect?.selectedOptions?.[0]?.textContent?.trim() || String(formData.get("service") || "").trim();
+            const dictionary = translations[activeLocale] || translations["pt-BR"];
+            const subject = dictionary["contact.mailSubject"] || "Contato pelo site - Vulpi Studio";
+            const body = [
+                `${dictionary["contact.nameLabel"] || "Nome e sobrenome"}: ${contactName}`,
+                `${dictionary["contact.phoneLabel"] || "Telefone"}: ${contactPhone}`,
+                `${dictionary["contact.emailLabel"] || "Email"}: ${contactEmail}`,
+                `${dictionary["contact.serviceLabel"] || "Qual serviço"}: ${contactService}`,
+                "",
+                `${dictionary["contact.messageLabel"] || "Mensagem"}:`,
+                contactMessage,
+            ].join("\n");
+
+            window.location.href = `mailto:contato@vulpistudio.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    }
 
     document.documentElement.classList.add("js-ready");
 });

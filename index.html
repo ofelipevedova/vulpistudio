@@ -153,7 +153,7 @@
                         <p data-i18n="about.description">
                             Vulpi Studio é uma parceira de design focada em marcas que precisam de estratégia, identidade e execução digital sem fricção desnecessária ou repasses dispersos.
                         </p>
-                        <a class="btn btn--outline about-read-more" href="#services" data-i18n="about.cta">Entre em contato</a>
+                        <a class="btn btn--outline about-read-more" href="#contact" data-i18n="about.cta">Entre em contato</a>
                     </div>
                 </div>
 
@@ -377,27 +377,129 @@
 
     </main>
 
-    <footer id="contact" class="footer section" data-reveal>
+    <footer id="contact" class="footer section" data-reveal aria-labelledby="contact-title">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3 data-i18n="footer.email">Email</h3>
-                    <a href="mailto:contato@vulpistudio.com">contato@vulpistudio.com</a>
-                </div>
+            <div class="footer-grid contact-grid">
+                <div class="contact-copy">
+                    <div class="about-mark">
+                        <span class="about-mark__icon" aria-hidden="true">
+                            <svg viewBox="0 0 40 40" role="img" aria-hidden="true" focusable="false">
+                                <circle class="about-mark__ring" cx="20" cy="20" r="15"></circle>
+                                <circle class="about-mark__core" cx="20" cy="20" r="4"></circle>
+                            </svg>
+                        </span>
+                        <h2 id="contact-title" class="about-mark__text" data-i18n="contact.label">Contato</h2>
+                    </div>
 
-                <div class="footer-column">
-                    <h3 data-i18n="footer.address">Endereço</h3>
-                    <p>Office anywhere.</p>
-                </div>
+                    <p class="contact-description" data-i18n="contact.description">
+                        Preencha o formulário e me conte o contexto do projeto, o prazo e o que você precisa resolver. Eu retorno com a próxima etapa.
+                    </p>
 
-                <div class="footer-column">
-                    <h3 data-i18n="footer.social">Social</h3>
-                    <div class="social-row social-row--footer">
-                        <a href="https://x.com/vulpistudio" target="_blank" rel="noopener noreferrer">X</a>
-                        <a href="https://www.instagram.com/vulpistudio/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                        <a href="https://www.linkedin.com/company/vulpi-studio-design" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <div class="contact-links">
+                        <div class="footer-column">
+                            <h3 data-i18n="footer.email">Email</h3>
+                            <a href="mailto:contato@vulpistudio.com">contato@vulpistudio.com</a>
+                        </div>
+
+                        <div class="footer-column">
+                            <h3 data-i18n="footer.social">Social</h3>
+                            <div class="social-row social-row--footer">
+                                <a href="https://x.com/vulpistudio" target="_blank" rel="noopener noreferrer">X</a>
+                                <a href="https://www.instagram.com/vulpistudio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                                <a href="https://www.linkedin.com/company/vulpi-studio-design" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <form
+                    class="contact-form"
+                    data-contact-form
+                    action="mailto:contato@vulpistudio.com"
+                    method="post"
+                    enctype="text/plain"
+                >
+                    <div class="contact-form__row">
+                        <div class="contact-field">
+                            <label for="contact-name" data-i18n="contact.nameLabel">Nome e sobrenome</label>
+                            <input
+                                id="contact-name"
+                                name="name"
+                                type="text"
+                                autocomplete="name"
+                                required
+                                placeholder="Seu nome completo"
+                                data-i18n-attr="placeholder"
+                                data-i18n-key="contact.namePlaceholder"
+                            >
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="contact-phone" data-i18n="contact.phoneLabel">Telefone</label>
+                            <input
+                                id="contact-phone"
+                                name="phone"
+                                type="tel"
+                                inputmode="tel"
+                                autocomplete="tel"
+                                maxlength="15"
+                                required
+                                placeholder="(00) 00000-0000"
+                                data-phone-mask
+                                data-i18n-attr="placeholder"
+                                data-i18n-key="contact.phonePlaceholder"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="contact-form__row">
+                        <div class="contact-field">
+                            <label for="contact-email" data-i18n="contact.emailLabel">Email</label>
+                            <input
+                                id="contact-email"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                required
+                                placeholder="voce@exemplo.com"
+                                data-i18n-attr="placeholder"
+                                data-i18n-key="contact.emailPlaceholder"
+                            >
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="contact-service" data-i18n="contact.serviceLabel">Qual serviço</label>
+                            <select id="contact-service" name="service" required>
+                                <option value="" selected disabled data-i18n="contact.servicePlaceholder">Selecione um serviço</option>
+                                <option value="uiux" data-i18n="services.card1.title">UI/UX Design</option>
+                                <option value="web" data-i18n="services.card2.title">Desenvolvimento Web</option>
+                                <option value="apps" data-i18n="services.card3.title">Desenvolvimento de Apps</option>
+                                <option value="consulting" data-i18n="services.card4.title">Consultoria de design</option>
+                                <option value="social" data-i18n="services.card5.title">Gestão de Social Media</option>
+                                <option value="branding" data-i18n="services.card6.title">Branding</option>
+                                <option value="other" data-i18n="contact.serviceOther">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contact-field contact-field--full">
+                        <label for="contact-message" data-i18n="contact.messageLabel">Mensagem</label>
+                        <textarea
+                            id="contact-message"
+                            name="message"
+                            rows="5"
+                            required
+                            placeholder="Conte sobre seu projeto"
+                            data-i18n-attr="placeholder"
+                            data-i18n-key="contact.messagePlaceholder"
+                        ></textarea>
+                    </div>
+
+                    <div class="contact-actions">
+                        <button class="btn btn--primary contact-submit" type="submit" data-i18n="contact.submit">Enviar</button>
+                        <p class="contact-note" data-i18n="contact.note">Ao enviar, seu aplicativo de e-mail será aberto com a mensagem pronta.</p>
+                    </div>
+                </form>
             </div>
 
             <div class="footer-bottom">
