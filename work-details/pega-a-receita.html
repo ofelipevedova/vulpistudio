@@ -60,165 +60,237 @@
   <link rel="stylesheet" href="./case.css" />
 </head>
 <body data-page="case">
+  <header class="navbar" data-reveal>
+    <a class="brand" href="../index.html#home" aria-label="Início da Vulpi Studio">
+      <img src="../images/logo.png" alt="Vulpi Studio" width="152" height="44" />
+    </a>
+
+    <nav class="nav-menu" aria-label="Navegação principal">
+      <a href="../index.html#home">Início</a>
+      <a href="../index.html#about">Sobre</a>
+      <a href="../index.html#works">Cases</a>
+      <a href="../index.html#contact">Contato</a>
+    </nav>
+  </header>
+
   <div class="detail-topbar" data-reveal>
     <nav class="detail-breadcrumb" aria-label="Caminho de navegação">
       <ol>
         <li><a href="../index.html#home">Início</a></li>
-        <li><a href="../index.html#works">Cases</a></li>
-        <li aria-current="page" data-case-name>Pega a Receita</li>
+        <li aria-current="page" data-case-breadcrumb>Pega a Receita</li>
       </ol>
     </nav>
   </div>
 
-  <main class="case-page">
+  <main class="case-page" id="top">
     <article aria-labelledby="case-title">
-      <!-- Título do projeto -->
       <section class="case-hero section-space">
-        <figure class="hero-frame reveal">
+        <div class="hero-copy-grid">
+          <div class="hero-copy reveal">
+            <h1 id="case-title" data-case-title>Pega a Receita</h1>
+          </div>
+        </div>
+      </section>
+
+      <div class="reveal case-first-image">
+        <img
+          src="./pega-a-receita-images/1.png"
+          alt="Imagem de apoio do Pega a Receita."
+          loading="lazy"
+          decoding="async"
+          class="media-load"
+        />
+      </div>
+
+      <dl class="case-info-row reveal" aria-label="Informações do projeto">
+        <div class="case-info-item">
+          <dt>Cliente</dt>
+          <dd>Pega a Receita</dd>
+        </div>
+
+        <div class="case-info-item">
+          <dt>Ano</dt>
+          <dd>2025</dd>
+        </div>
+
+        <div class="case-info-item">
+          <dt>Tipo</dt>
+          <dd>Site de receitas</dd>
+        </div>
+
+        <div class="case-info-item">
+          <dt>Role</dt>
+          <dd>UX/UI Design</dd>
+        </div>
+      </dl>
+
+      <section class="case-challenge reveal" aria-labelledby="challenge-title">
+        <h2 id="challenge-title" class="section-label">O cenário</h2>
+        <div class="case-challenge-copy">
+          <p>
+            O projeto surgiu da oportunidade de repensar a experiência de uma plataforma de receitas para torná-la mais intuitiva, acessível e orientada à descoberta. Em um contexto em que plataformas desse tipo dependem de clareza, navegação fluida e engajamento recorrente, o desafio era criar uma experiência capaz de equilibrar exploração de conteúdo, usabilidade e uma jornada agradável em múltiplos dispositivos.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-image-section reveal" aria-label="Galeria de imagens do projeto">
+        <figure class="case-image-main">
           <img
-            src="./pega-a-receita-images/capa.jpg"
-            alt="Imagem conceitual do case Pega a Receita com estética editorial."
-            fetchpriority="high"
+            src="./pega-a-receita-images/2.png"
+            alt="Imagem principal da seção de imagens do Pega a Receita."
+            loading="lazy"
             decoding="async"
             class="media-load"
           />
         </figure>
 
-        <div class="hero-copy-grid">
-          <div class="hero-copy reveal">
-            <span class="case-tag">Site de receitas</span>
-            <h1 id="case-title" data-case-name>Pega a Receita</h1>
-          </div>
-
-          <div class="hero-details">
-            <div class="hero-description reveal">
-              <p>
-                Pega a Receita é um case de site editorial pensado para
-                descoberta rápida de receitas, leitura confortável e
-                navegação objetiva. O sistema organiza o conteúdo em blocos
-                claros para ajudar o usuário a sair da inspiração e chegar ao
-                preparo com menos atrito.
-              </p>
-            </div>
-
-            <div class="hero-meta reveal">
-              <div class="meta-item">
-                <span>Cliente</span>
-                <strong>Pega a Receita</strong>
-              </div>
-
-              <div class="meta-item">
-                <span>Serviço</span>
-                <strong>UX/UI, conteúdo</strong>
-              </div>
-
-              <div class="meta-item">
-                <span>Período</span>
-                <strong>Fevereiro 2025</strong>
-              </div>
-
-              <div class="meta-item">
-                <span>Ano</span>
-                <strong>2025</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div style="padding: 24px 0px 24px 0px;"><hr></div>
-      <div><img src="./pega-a-receita-images/01.jpg" alt=""></div>
-      <!-- Resumo -->
-      <section class="case-section text-split section-space" aria-labelledby="resumo-title" style="margin-top: 90px; margin-bottom: 90px;">
-        <h2 id="resumo-title" class="section-label reveal">Visão geral</h2>
-
-        <div class="section-text reveal">
-          <p>
-            Pega a Receita é um projeto de website responsivo criado para apresentar receitas de forma simples, visual e acessível.
-
-          A proposta do projeto foi desenvolver uma experiência leve e intuitiva, onde o usuário consegue explorar receitas, entender os ingredientes e navegar pelo conteúdo sem esforço. 
-          </p>
-
-        </div>
-      </section>
-      <div class="dual-gallery">
-          <figure class="gallery-card blue reveal">
+        <div class="case-image-grid">
+          <figure class="case-image-card">
             <img
-              src="./pega-a-receita-images/02.jpg"
-              alt="Estudo visual da home do Pega a Receita com foco editorial."
+              src="./pega-a-receita-images/3.png"
+              alt="Imagem complementar um da seção de imagens do Pega a Receita."
+              loading="lazy"
+              decoding="async"
               class="media-load"
             />
           </figure>
 
-          <figure class="gallery-card sand reveal">
+          <figure class="case-image-card">
             <img
-              src="./pega-a-receita-images/03.jpg"
-              alt="Estudo visual de categorias e blocos de conteúdo do Pega a Receita."
+              src="./pega-a-receita-images/4.png"
+              alt="Imagem complementar dois da seção de imagens do Pega a Receita."
+              loading="lazy"
+              decoding="async"
               class="media-load"
             />
           </figure>
         </div>
+      </section>
 
-      <!-- Desafio -->
-      <section class="case-section text-split section-space" aria-labelledby="desafio-title">
-        <h2 id="desafio-title" class="section-label reveal">Desafio</h2>
-
-        <div class="section-text reveal">
+      <section class="case-challenge reveal" aria-labelledby="challenge-title-2">
+        <h2 id="challenge-title-2" class="section-label">O que o VulpiStudio precisava resolver</h2>
+        <div class="case-challenge-copy">
           <p>
-            O principal desafio foi transformar um catálogo de receitas em uma experiência digital agradável de explorar, com foco em hierarquia de conteúdo, navegação intuitiva e responsividade, sem perder o aspecto acolhedor e inspirador que o universo gastronômico pede.
+            O desafio estava em estruturar uma experiência que facilitasse a descoberta de receitas, reduzisse fricções durante navegação e preparo, e tornasse o produto mais envolvente para estimular recorrência de uso. Além da interface, havia a oportunidade de pensar a plataforma como uma experiência mais completa, conectando conteúdo, interação e utilidade.
           </p>
-
         </div>
       </section>
-      <div><img src="./pega-a-receita-images/05.jpg" alt=""></div>
-      <!-- Solução -->
-      <section class="case-section text-split section-space" aria-labelledby="solucao-title">
-        <h2 id="solucao-title" class="section-label reveal">Solução</h2>
 
-        <div class="section-text reveal">
-          <p>
-            A solução combinou uma estrutura de navegação simples, hierarquia visual bem definida e componentes responsivos para facilitar a descoberta e o consumo de conteúdo. O projeto priorizou escaneabilidade, organização das informações e uma experiência fluida entre desktop e mobile, transformando o site em uma plataforma mais funcional e convidativa.
-          </p>
+      <section class="case-image-pair reveal" aria-label="Galeria final do projeto">
+        <div class="case-image-grid">
+          <figure class="case-image-card">
+            <img
+              src="./pega-a-receita-images/5.png"
+              alt="Imagem final um da galeria do Pega a Receita."
+              loading="lazy"
+              decoding="async"
+              class="media-load"
+            />
+          </figure>
 
+          <figure class="case-image-card">
+            <img
+              src="./pega-a-receita-images/6.png"
+              alt="Imagem final dois da galeria do Pega a Receita."
+              loading="lazy"
+              decoding="async"
+              class="media-load"
+            />
+          </figure>
         </div>
       </section>
-      <div><img src="./pega-a-receita-images/06.jpg" alt=""></div>
 
-       <!-- Responsividade -->
-      <section class="case-section text-split section-space" aria-labelledby="solucao-title">
-        <h2 id="solucao-title" class="section-label reveal">Estrutura Responsiva</h2>
-
-        <div class="section-text reveal" style="margin-top: 90px; margin-bottom: 90px;">
+      <section class="case-hypothesis reveal" aria-labelledby="hypothesis-title">
+        <h2 id="hypothesis-title" class="section-label">Hipótese de solução</h2>
+        <div class="case-hypothesis-copy">
           <p>
-            A responsividade foi tratada como parte central do projeto, não como adaptação posterior. Cada tela foi pensada para manter clareza, fluidez e conforto de uso em diferentes dispositivos, com layouts e componentes ajustados para oferecer uma experiência consistente do desktop ao mobile.
-          </p>
-
-        </div>
-      </section>
-      <div><img src="./pega-a-receita-images/07.jpg" alt=""></div>
-      
-      <!-- Resultados -->
-      <section class="case-section text-split section-space" aria-labelledby="resultados-title">
-        <h2 id="resultados-title" class="section-label reveal">Resultados</h2>
-
-        <div class="section-text reveal">
-          <p>
-            Como resultado, o projeto evoluiu para uma experiência mais clara, funcional e agradável de explorar, com melhor estrutura de conteúdo, navegação fluida e consistência entre dispositivos. A solução elevou a qualidade da interface e traduziu o conceito do produto em uma experiência digital mais madura.
+            A hipótese foi que uma experiência mais orientada à descoberta, com melhor hierarquia de informação, navegação simplificada e foco mobile-first, poderia tornar o uso mais intuitivo e aumentar engajamento. A proposta era combinar exploração de conteúdo e praticidade, transformando a plataforma em algo mais útil e agradável no dia a dia do usuário.
           </p>
 
         </div>
       </section>
 
-      <!-- Próximos passos / CTA -->
+      <section class="case-implementation-media reveal" aria-label="Imagem da implementação">
+        <figure class="case-implementation-image">
+          <img
+            src="./pega-a-receita-images/7.png"
+            alt="Imagem grande da implementação da solução do Pega a Receita."
+            loading="lazy"
+            decoding="async"
+            class="media-load"
+          />
+        </figure>
+      </section>
+
+      <section class="case-implementation reveal" aria-labelledby="implementation-title">
+        <h2 id="implementation-title" class="section-label">Como implementamos a solução</h2>
+        <div class="case-implementation-copy">
+          <p>
+            A solução foi construída a partir da reorganização da arquitetura da experiência, priorizando descoberta, leitura e execução das receitas. O trabalho focou em evoluir fluxos principais, melhorar escaneabilidade de conteúdo, reforçar consistência visual e criar uma experiência responsiva preparada para diferentes contextos de uso.
+
+        </div>
+      </section>
+
+      <section class="case-results-media reveal" aria-label="Imagem dos resultados">
+        <figure class="case-results-image">
+          <img
+            src="./pega-a-receita-images/8.png"
+            alt="Imagem grande da seção de resultados do Pega a Receita."
+            loading="lazy"
+            decoding="async"
+            class="media-load"
+          />
+        </figure>
+      </section>
+
+      <section class="case-results reveal" aria-labelledby="results-title">
+        <h2 id="results-title" class="section-label">E esses foram os resultados</h2>
+        <div class="case-results-copy">
+          <p>
+            O projeto resultou em uma experiência pensada para maximizar descoberta, engajamento e facilidade de uso desde o lançamento do produto. A solução estabeleceu uma base escalável para a plataforma, com projeção de aumento de 38% na exploração de receitas por navegação e busca, 27% maior intenção de recorrência, além de uma experiência otimizada para mobile, principal contexto de uso do produto.
+            Além dos indicadores de engajamento esperados, o projeto definiu uma estrutura sólida para crescimento do produto, contemplando evolução de conteúdo, retenção e futuras oportunidades de monetização.
+          </p>
+        </div>
+      </section>
+
       <section class="case-cta section-space">
         <div class="cta-content reveal">
-          <span class="cta-label">Quer criar um case com a mesma estrutura?</span>
-          <a href="../index.html#contact" class="cta-mail">
-            Entre em contato
-          </a>
+          <span class="cta-label">Quer desenvolver um projeto?</span>
+          <a href="../index.html#contact" class="cta-mail">contato@vulpistudio.com</a>
         </div>
       </section>
     </article>
   </main>
+
+  <footer class="footer reveal">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Email</h3>
+          <a href="mailto:contato@vulpistudio.com">contato@vulpistudio.com</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Endereço</h3>
+          <p>Office anywhere.</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Social</h3>
+          <div class="social-row social-row--footer">
+            <a href="https://x.com/vulpistudio" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://www.instagram.com/vulpistudio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/company/vulpi-studio-design" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright 2026 - VulpiStudio.</p>
+        <a class="btn btn--ghost" href="#top">Voltar ao topo</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="./site.js"></script>
 </body>

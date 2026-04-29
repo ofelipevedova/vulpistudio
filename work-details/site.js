@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const titleTargets = Array.from(document.querySelectorAll("[data-case-name]"));
+    const breadcrumbTargets = Array.from(document.querySelectorAll("[data-case-breadcrumb]"));
+    const headingTargets = Array.from(document.querySelectorAll("[data-case-title]"));
+    const legacyCaseTargets = Array.from(document.querySelectorAll("[data-case-name]"));
     const descriptionMeta = document.querySelector('meta[name="description"]');
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     const ogTypeMeta = document.querySelector('meta[property="og:type"]');
@@ -89,14 +91,26 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isTemplatePage) {
         const slug = resolveSlug();
         const caseTitle = slugToTitle(slug);
-        const titleSuffix = document.title.includes("|")
-            ? document.title.split("|").slice(1).join("|").trim()
-            : "Vulpi Studio";
-        const finalTitle = titleSuffix ? `${caseTitle} | ${titleSuffix}` : caseTitle;
+        const caseBreadcrumb = document.body.dataset.caseName?.trim() || caseTitle;
+        const caseHeading = document.body.dataset.caseHeading?.trim() || document.body.dataset.caseTitle?.trim() || caseTitle;
+        const titleParts = caseBreadcrumb && caseHeading && caseBreadcrumb !== caseHeading
+            ? [caseBreadcrumb, caseHeading, "Vulpi Studio"]
+            : [caseHeading || caseBreadcrumb, "Vulpi Studio"];
+        const finalTitle = titleParts.filter(Boolean).join(" | ");
 
-        titleTargets.forEach((element) => {
-            element.textContent = caseTitle;
-        });
+        if (breadcrumbTargets.length || headingTargets.length) {
+            breadcrumbTargets.forEach((element) => {
+                element.textContent = caseBreadcrumb;
+            });
+
+            headingTargets.forEach((element) => {
+                element.textContent = caseHeading;
+            });
+        } else {
+            legacyCaseTargets.forEach((element) => {
+                element.textContent = caseTitle;
+            });
+        }
 
         document.title = finalTitle;
 
