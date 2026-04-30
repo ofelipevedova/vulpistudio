@@ -46,7 +46,7 @@ Introdução com título grande, subtítulo e CTA impactantes
 Galeria de cases com efeito hover e animação ao scroll
 
 ### Serviços
-6 serviços principais apresentados em cards elegantes
+4 serviços principais apresentados em cards elegantes
 
 ### Depoimentos
 Testimonials de clientes com autor e cargo
