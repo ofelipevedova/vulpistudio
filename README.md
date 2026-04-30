@@ -8,7 +8,7 @@ Um website moderno e minimalista para estúdio de design, inspirado em agências
 - **Grandes Tipografias**: Títulos impactantes que dominam a página
 - **Hero Centrado**: Seção de abertura com mensagem principal clara
 - **Showcase de Trabalhos**: Galeria de cases com animações ao hover
-- **Seção de Serviços**: Cards com descrição dos principais serviços
+- **Seção de Serviços**: Cards com serviços de UX/UI, produto e desenvolvimento
 - **Depoimentos**: Testimonials de clientes satisfeitos
 - **Processo Transparente**: Explicação clara dos 4 passos do trabalho
 - **Plano de Pricing**: Apresentação de pacote de assinatura
@@ -46,7 +46,7 @@ Introdução com título grande, subtítulo e CTA impactantes
 Galeria de cases com efeito hover e animação ao scroll
 
 ### Serviços
-4 serviços principais apresentados em cards elegantes
+6 serviços principais apresentados em cards elegantes
 
 ### Depoimentos
 Testimonials de clientes com autor e cargo
