@@ -493,16 +493,64 @@
             return;
         }
 
-        const scrollDistance = () => Math.max(320, Math.round(track.clientWidth * 0.82));
         const behavior = prefersReducedMotion ? "auto" : "smooth";
+        const getItems = () => Array.from(track.children).filter((child) => child instanceof HTMLElement);
+        const getMaxScrollLeft = () => Math.max(0, track.scrollWidth - track.clientWidth);
 
-        prevButton.addEventListener("click", () => {
-            track.scrollBy({ left: -scrollDistance(), behavior });
+        const scrollToLeft = (left) => {
+            const targetLeft = Math.max(0, Math.min(left, getMaxScrollLeft()));
+
+            if (typeof track.scrollTo === "function") {
+                track.scrollTo({ left: targetLeft, behavior });
+            } else {
+                track.scrollLeft = targetLeft;
+            }
+        };
+
+        const updateButtonState = () => {
+            const maxScrollLeft = getMaxScrollLeft();
+            const atStart = track.scrollLeft <= 1;
+            const atEnd = track.scrollLeft >= maxScrollLeft - 1;
+
+            prevButton.disabled = atStart;
+            nextButton.disabled = atEnd;
+            prevButton.setAttribute("aria-disabled", String(atStart));
+            nextButton.setAttribute("aria-disabled", String(atEnd));
+        };
+
+        const goToAdjacentItem = (direction) => {
+            const items = getItems();
+
+            if (!items.length) {
+                return;
+            }
+
+            const currentLeft = track.scrollLeft;
+
+            if (direction < 0) {
+                const previousItems = items.filter((item) => item.offsetLeft < currentLeft - 1);
+                const previousItem = previousItems.at(-1);
+                scrollToLeft(previousItem ? previousItem.offsetLeft : 0);
+                return;
+            }
+
+            const nextItem = items.find((item) => item.offsetLeft > currentLeft + 1);
+            scrollToLeft(nextItem ? nextItem.offsetLeft : getMaxScrollLeft());
+        };
+
+        prevButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            goToAdjacentItem(-1);
         });
 
-        nextButton.addEventListener("click", () => {
-            track.scrollBy({ left: scrollDistance(), behavior });
+        nextButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            goToAdjacentItem(1);
         });
+
+        track.addEventListener("scroll", updateButtonState, { passive: true });
+        window.addEventListener("resize", updateButtonState);
+        updateButtonState();
     };
 
     bindCarousel(
