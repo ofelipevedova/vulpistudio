@@ -42,6 +42,18 @@ img {
   height: auto;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -223,6 +235,12 @@ a {
 
 .case-first-image {
   margin-top: 48px;
+}
+
+body.case-ms-avaliacao .case-first-image,
+body.case-ms-avaliacao .case-first-image img {
+  border-radius: 0;
+  overflow: visible;
 }
 
 .case-info-row {
@@ -461,6 +479,87 @@ a {
   line-height: 1.6;
   color: var(--text-soft);
   overflow-wrap: break-word;
+}
+
+.case-testimonial {
+  display: grid;
+  gap: 16px;
+  margin-top: 120px;
+}
+
+.case-testimonial .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.case-testimonial .section-label::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ec2b3c;
+  flex: 0 0 auto;
+}
+
+.case-testimonial-card {
+  margin: 0;
+  padding: 28px clamp(20px, 3vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(236, 43, 60, 0.06), rgba(236, 43, 60, 0.015));
+}
+
+.case-testimonial-card blockquote {
+  margin: 0;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.6;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.case-testimonial-card cite {
+  display: block;
+  margin-top: 18px;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+body.case-ms-avaliacao {
+  --accent: #2673f3;
+}
+
+body.case-ms-avaliacao .case-challenge .section-label::before,
+body.case-ms-avaliacao .case-hypothesis .section-label::before,
+body.case-ms-avaliacao .case-implementation .section-label::before,
+body.case-ms-avaliacao .case-results .section-label::before,
+body.case-ms-avaliacao .case-testimonial .section-label::before {
+  background: #2673f3;
+}
+
+body.case-ms-avaliacao .case-testimonial-card {
+  background: linear-gradient(180deg, rgba(38, 115, 243, 0.08), rgba(38, 115, 243, 0.02));
+}
+
+body.case-ms-avaliacao .cta-mail::before {
+  background: #2673f3;
+}
+
+body.case-ms-avaliacao .hero-copy {
+  max-width: 980px;
+}
+
+body.case-ms-avaliacao .hero-description {
+  margin-top: 16px;
+  max-width: 980px;
+}
+
+body.case-ms-avaliacao .hero-description > p {
+  max-width: 920px;
 }
 
 .case-image-main,
