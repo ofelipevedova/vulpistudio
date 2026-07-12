@@ -757,7 +757,7 @@ html.js:not(.js-ready) [data-reveal] * {
 .works-grid {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100% - 1.15rem) / 2);
+    grid-auto-columns: calc((100% - 3.45rem) / 4);
     gap: 1.15rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;

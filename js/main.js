@@ -496,6 +496,8 @@
         const behavior = prefersReducedMotion ? "auto" : "smooth";
         const getItems = () => Array.from(track.children).filter((child) => child instanceof HTMLElement);
         const getMaxScrollLeft = () => Math.max(0, track.scrollWidth - track.clientWidth);
+        const controls = prevButton.closest("[data-carousel-controls]");
+        const showsOnlyWhenMoreThanFour = controls?.dataset.carouselControls === "more-than-four";
 
         const scrollToLeft = (left) => {
             const targetLeft = Math.max(0, Math.min(left, getMaxScrollLeft()));
@@ -508,14 +510,20 @@
         };
 
         const updateButtonState = () => {
+            const hasMoreThanFourItems = getItems().length > 4;
             const maxScrollLeft = getMaxScrollLeft();
             const atStart = track.scrollLeft <= 1;
             const atEnd = track.scrollLeft >= maxScrollLeft - 1;
+            const controlsAvailable = !showsOnlyWhenMoreThanFour || hasMoreThanFourItems;
 
-            prevButton.disabled = atStart;
-            nextButton.disabled = atEnd;
-            prevButton.setAttribute("aria-disabled", String(atStart));
-            nextButton.setAttribute("aria-disabled", String(atEnd));
+            if (showsOnlyWhenMoreThanFour) {
+                controls.hidden = !hasMoreThanFourItems;
+            }
+
+            prevButton.disabled = !controlsAvailable || atStart;
+            nextButton.disabled = !controlsAvailable || atEnd;
+            prevButton.setAttribute("aria-disabled", String(!controlsAvailable || atStart));
+            nextButton.setAttribute("aria-disabled", String(!controlsAvailable || atEnd));
         };
 
         const goToAdjacentItem = (direction) => {
