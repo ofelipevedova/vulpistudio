@@ -488,6 +488,40 @@
         revealTargets.forEach((element) => revealObserver.observe(element));
     }
 
+    const setupWorksCarousel = () => {
+        const track = document.querySelector('[data-carousel-track="works"]');
+
+        if (!track) {
+            return;
+        }
+
+        const cards = Array.from(track.children).filter((child) => child.classList.contains("work-card"));
+        track.dataset.carouselItemCount = String(cards.length);
+
+        if (cards.length <= 4) {
+            return;
+        }
+
+        const pages = [];
+
+        cards.forEach((card, index) => {
+            const pageIndex = Math.floor(index / 4);
+            const page = pages[pageIndex] || document.createElement("div");
+
+            if (!pages[pageIndex]) {
+                page.className = "works-page";
+                pages.push(page);
+            }
+
+            page.appendChild(card);
+        });
+
+        track.replaceChildren(...pages);
+        track.classList.add("has-carousel");
+    };
+
+    setupWorksCarousel();
+
     const bindCarousel = (track, prevButton, nextButton) => {
         if (!track || !prevButton || !nextButton) {
             return;
@@ -510,7 +544,8 @@
         };
 
         const updateButtonState = () => {
-            const hasMoreThanFourItems = getItems().length > 4;
+            const itemCount = Number(track.dataset.carouselItemCount) || getItems().length;
+            const hasMoreThanFourItems = itemCount > 4;
             const maxScrollLeft = getMaxScrollLeft();
             const atStart = track.scrollLeft <= 1;
             const atEnd = track.scrollLeft >= maxScrollLeft - 1;
